@@ -11,19 +11,17 @@ function App() {
 
  
 function handleChange(event){
-    const newValue = event.target.value;
-    const inputName = event.target.name;
-   
+    const { value , name } =event.target;
    setFullName(preValue=> {
-    if(inputName==="fName"){
+    if(name==="fName"){
     return{
-      fName:newValue,
+      fName:value,
       lName: preValue.lName
     }
-   }  else if(inputName ==="lName"){
+   }  else if(name ==="lName"){
     return{
       fName:preValue.fName,
-      lName: newValue,
+      lName: value,
     }
    }
   });
